@@ -1,0 +1,11 @@
+<% @articles.each do |article|%>
+<div class="article">
+  <h2><%= link_to article.title, article_path(article) %></h2>
+  <div class="d-flex justify-content-between align-items-start">
+    <p><%= article.content[0..60] %>...</p>
+    <%= link_to "Delete", article_path(article), class:"delete",
+          method: :delete,
+          data: { confirm: "Are you sure?" }  %>
+  </div>
+</div>
+<% end %>
